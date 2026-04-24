@@ -1,19 +1,31 @@
 public class TicTacToeUC1 {
 
+    static char[][] board = new char[3][3];
+
     public static void main(String[] args) {
-        char[][] board = new char[3][3];
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                board[i][j] = '-';
+        initializeBoard();
+        printBoard();
+    }
+
+    static void initializeBoard() {
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                board[row][col] = '-';
             }
         }
-        System.out.println("Tic-Tac-Toe Board:");
-
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                System.out.print(board[i][j] + " ");
+    }
+    static void printBoard() {
+        System.out.println("-------------");
+        
+        for (int row = 0; row < 3; row++) {
+            System.out.print("| ");
+            
+            for (int col = 0; col < 3; col++) {
+                System.out.print(board[row][col] + " | ");
             }
-            System.out.println(); // new line after each row
+            
+            System.out.println();
+            System.out.println("-------------");
         }
     }
 }
